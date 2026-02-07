@@ -1,0 +1,10 @@
+load("//bazel/rules:java.bzl", "java_library")
+
+java_library(
+    name = "hello",
+    srcs = ["Hello.java"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@maven//:org_jspecify_jspecify",
+    ],
+)

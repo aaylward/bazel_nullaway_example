@@ -1,0 +1,30 @@
+load("@buildifier_prebuilt//:rules.bzl", "buildifier", "buildifier_test")
+
+alias(
+    name = "format",
+    actual = "//bazel/format",
+)
+
+alias(
+    name = "format.check",
+    actual = "//bazel/format:format.check",
+)
+
+buildifier(
+    name = "buildifier",
+    lint_mode = "fix",
+)
+
+buildifier_test(
+    name = "buildifier_test",
+    size = "small",
+    timeout = "short",
+    exclude_patterns = [
+        "./.bazelbsp/*",
+    ],
+    lint_mode = "warn",
+    lint_warnings = ["-function-docstring-args"],
+    mode = "diff",
+    no_sandbox = True,
+    workspace = "//:MODULE.bazel",
+)

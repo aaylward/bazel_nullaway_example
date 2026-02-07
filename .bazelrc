@@ -1,0 +1,7 @@
+common --java_language_version=25
+common --java_runtime_version=remotejdk_25
+common --tool_java_language_version=25
+common --tool_java_runtime_version=remotejdk_25
+
+build --experimental_strict_java_deps=error
+build --experimental_java_classpath=bazel

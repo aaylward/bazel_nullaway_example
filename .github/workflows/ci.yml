@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bazel
+        uses: bazel-contrib/setup-bazel@0.18.0
+        with:
+          bazelisk-cache: true
+          disk-cache: ${{ github.workflow }}
+          repository-cache: true
+          bazelrc: |
+            common --experimental_repository_downloader_retries=5
+
+      - name: Build & Test
+        run: |
+          bazel test //...
+
+      - name: Format Check
+        run: |
+          bazel run //:format.check
+
+      - name: Buildifier Check
+        run: |
+          bazel test //:buildifier_test
