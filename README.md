@@ -58,3 +58,7 @@ NullAway is configured in `bazel/rules/java.bzl` with the following options:
 - `-Xep:NullAway:ERROR`: Treats NullAway warnings as errors.
 - `-XepOpt:NullAway:AnnotatedPackages=com.example`: Specifies which packages NullAway should analyze.
 - `-XDcompilePolicy=simple`: Required for Error Prone plugins.
+
+## License
+
+This project is released under the Unlicense. See [LICENSE](LICENSE) for details.
