@@ -8,7 +8,7 @@ bazel_dep(name = "rules_jvm_external", version = "6.9")
 bazel_dep(name = "contrib_rules_jvm", version = "0.32.0")
 bazel_dep(name = "aspect_rules_lint", version = "2.6.0")
 
-bazel_dep(name = "buildifier_prebuilt", version = "8.2.1.2", dev_dependency = True)
+bazel_dep(name = "buildifier_prebuilt", version = "8.5.1.2", dev_dependency = True)
 
 http_jar = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_jar")
 
