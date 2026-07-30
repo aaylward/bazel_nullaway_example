@@ -28,7 +28,7 @@ maven.install(
     artifacts = [
         "com.google.errorprone:error_prone_core:%s" % ERROR_PRONE_VERSION,
         "com.uber.nullaway:nullaway:%s" % NULLAWAY_VERSION,
-        "org.jspecify:jspecify:1.0.0",
+        "org.jspecify:jspecify:1.0.1",
         "junit:junit:4.13.2",
         "org.assertj:assertj-core:3.27.7",
     ],
